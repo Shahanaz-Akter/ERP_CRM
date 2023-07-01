@@ -4,10 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 
+// Route::get('/', function () {
+//     return view('home');
+// });
 Route::get('/', function () {
-    return view('home');
-});
-Route::get('/s', function () {
     return view('welcome');
 });
 Route::get('/leads', function () {
@@ -185,6 +185,11 @@ Route::get('/deals/new-mass-email', function () {
 
 
 //Task Route
+
 Route::get('/task', function () {
     return view('Task.task');
+});
+
+Route::get('/edit_table_data', function () {
+    return view('Task.edit_table_data');
 });

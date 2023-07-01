@@ -259,7 +259,7 @@
 
     @include('components.navbar')
     <!-- Layout wrapper -->
-    <div class=" d-flex">
+    <div class="d-flex">
         @include('Task.task_filter_sidebar')
         <!-- create candidate model -->
 
@@ -270,137 +270,99 @@
             <div class="p-3" style="">
 
                 <!-- Content -->
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="header p-3 w-50">
-                        <div class="col-md-6">
-                            <select id="select2Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                                <option value="AK">All Leads</option>
-                                <option value="HI">Converted Leads</option>
-                                <option value="CA">Junk Leads</option>
-                                <option value="NV">Mailing Labels</option>
-                                <option value="OR">My Converted Leads</option>
-                                <option value="WA">My Leads</option>
-                                <option value="AZ">Not Qualified Leads</option>
-                                <option value="CO">Open Leads</option>
-                                <option value="ID">Recently created leads</option>
-                                <option value="MT">Recently Modified Leads</option>
-                                <option value="NE">Today's Leads</option>
-                                <option value="NM">Unread leads</option>
-                                <option value="ND">Unsubscribed Leads</option>
-                            </select>
-                        </div>
+                <div class="header d-flex align-items-center justify-content-between">
+
+                    <div class="" style="font-size: 22px;">
+                        Edit Task
+                        <a href="" class="ms-5"> Edit Page Layout</a>
                     </div>
 
-                    <div class="header p-3 d-flex slign-items-center justify-content-end ">
-                        <div class="start">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white">Create Lead</a></button>
-                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="visually-hidden">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="{{url('/import_tasks')}}">Import Tasks</a></li>
-                                    <!-- <li><a class="dropdown-item" href="javascript:void(0);">Import Notes</a></li> -->
-
-                                </ul>
-                            </div>
-
-                            {{-- <div class="btn-group">
-                                <button type="button" class="btn btn-primary">Export</button>
-                                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="visually-hidden">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="javascript:void(0);" id="excel"></a></li>
-                                    <li><a class="dropdown-item" href="javascript:void(0);" id="csv"></a></li>
-
-                                </ul>
-                            </div> --}}
-
-                        </div>
-                        <div class="middle ms-3">
-                            <div class="btn-group">
-                                <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
-                                <ul class="dropdown-menu">
-                                    {{-- href="javascript:void(0);" --}}
-                                    <li><a class="dropdown-item" href="{{url('/task/mass_delete')}}">Mass Delete</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="{{url('/task/mass_update')}}">Mass Update</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="{{url('/task/manage_tag')}}">Manage Tag</a>
-                                    </li>
-                                    </hr>
-                                    <li><a class="dropdown-item" href="{{url('/task/print_view')}}">Print View</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
+                    <div class="header p-3 d-flex align-items-center justify-content-end fs-2">
+                        <button class="start btn btn-primary">
+                            <a href="{{url('/task')}}" class="text-white">Cancel</a>
+                        </button>
+                        <button class="start ms-3 btn btn-primary" type="submit">
+                            Save and New
+                        </button>
+                        <button class="middle ms-3 btn btn-primary" type="submit">
+                            Save
+                        </button>
                     </div>
                 </div>
-
-                {{-- table start --}}
-
-                @include('Task.task_list_table')
-
-
-                {{-- <div class="content-backdrop fade"></div> --}}
-
             </div>
             <!-- / Layout page -->
-            <!-- Overlay -->
-            <div class="layout-overlay layout-menu-toggle"></div>
-            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-            <div class="drag-target"></div>
+
+
+            <h4 class="header p-3">Task Information</h4>
+            <div class="row header p-3">
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Task Owner</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
+                    <input type="text" class="form-control" placeholder="" value="batman020120130114">
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Subject</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
+                    <input type="text" class="form-control" placeholder="" value="Complete CRM Getting Started steps">
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Due Date</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="03/28/2023">
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Contact</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="John Butt (Sample)">
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Deal</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="Benton">
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Status</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3">
+                    <select class="input-group p-1 b-0 " id="status">
+                        <option value="complete">Complete</option>
+                        <option value="incomplete">Incomplete</option>
+                    </select>
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Priority</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="highest">
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label">Reminder</label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control">
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
+                    <label for="" class="form-label"> Description
+                    </label>
+                </div>
+                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
+                    Get approval for price quote
+                </div>
+
+            </div>
+
+
+
+
+
+
         </div>
 
     </div>
     <!-- / Layout wrapper -->
 
 
-    <!-- Modal Add to Campaigns start -->
-    <div class="modal modal-top fade " id="modalTop" tabindex="-1">
-        <div class="modal-dialog modal-xl">
-            <form class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modalTopTitle">Choose Campaign</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-
-                    <div class="d-flex justify-content-between  px-3">
-                        <div class="input-group input-group-merge col-md-6 w-50">
-                            <span class="input-group-text" id="basic-addon-search31"><i class="bx bx-search"></i></span>
-                            <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." aria-describedby="basic-addon-search31" />
-                        </div>
-
-                        <button type="button" class="btn btn-outline-primary">
-                            <span class="fa-solid fa-plus"></span>&nbsp; New Campaign
-                        </button>
-
-                    </div>
-
-
-                    {{-- <div class="outer-wrapper"> --}}
-                    <div class="table-wrapper ">
-                        @include('Leads.actionRoutes.AddCampaings.AddCampaings_list')
-                    </div>
-                    {{-- <div class="text-center border-bottom border-3 py-4">
-                            <span class="text-muted ">No Campaigns found</span>
-                        </div> --}}
-                    {{-- </div> --}}
-
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-label-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save</button>
-                </div>
-            </form>
-        </div>
-    </div>
-    <!-- Modal Add to Campaigns end -->
 
 
 
