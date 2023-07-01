@@ -1,0 +1,11 @@
+.nav_dropdown_item {
+    padding: 5px 13px;
+}
+
+.nav_dropdown_item:hover {
+    background: rgb(17, 112, 129);
+    color: white;
+}
+body {
+    box-sizing: border-box;
+}

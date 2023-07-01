@@ -1,0 +1,48 @@
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.filter_sidebar{
+    height: 92vh;
+    padding-bottom: 50px;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.filter_sidebar .item{
+    cursor: pointer;
+}
+.filter_sidebar ul{
+    padding: 0px;
+    margin: 0px;
+}
+.filter_sidebar ul li{
+    list-style-type: none !important;
+    
+}
+
+.outer_ul li{
+    padding-left: 10px;;
+    
+}
+
+.outer_ul li .title input, .outer_ul li .title label{
+    height: 100%;
+}
+.content__2 .myselect{
+    background-color: lightblue;
+    padding:0 3px;
+    border:none;
+}
+.content__2 .myselect option{
+    width:300px;
+    padding:10px;
+}
+.user_system_select{
+    padding:2px 5px;
+    border:1px solid gray;
+}
