@@ -17,10 +17,10 @@
     <style>
         .material-symbols-outlined {
             font-variation-settings:
-                'FILL'0,
-                'wght'400,
-                'GRAD'0,
-                'opsz'48
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 48
         }
 
         #container {
@@ -102,6 +102,7 @@
             });
         }
     </script>
+
     <script type="text/javascript">
         const arrow__ = (tag) => {
             let parent = tag.parentElement;

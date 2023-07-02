@@ -15,6 +15,8 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://1.envato.market/frest_admin">
     
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/custom.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/favicon/favicon.ico') }}" />
 
@@ -105,7 +107,6 @@
 
 {{-- css link for  datatable selector --}}
 <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
-
 
 
 <style>
