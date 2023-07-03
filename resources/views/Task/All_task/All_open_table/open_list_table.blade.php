@@ -1,3 +1,4 @@
+<h5 class="text-black">All Open List Table</h5>
 <table id="leads_table" class="display" style="width:100%">
     <thead>
         <tr>

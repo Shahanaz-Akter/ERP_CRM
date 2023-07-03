@@ -261,7 +261,7 @@
     @include('components.navbar')
     <!-- Layout wrapper -->
     <div class=" d-flex">
-        @include('Task.task_filter_sidebar')
+        @include('Task.task_sidebar')
         <!-- create candidate model -->
 
         <!-- Layout container -->
@@ -272,10 +272,15 @@
 
                 <!-- Content -->
                 <div class="d-flex justify-content-between align-items-center">
-                    <div class="header p-3 w-50">
+                    <div class="header w-50">
                         <div class="col-md-6">
-                            <select id="select2Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                                <option value="AK">All Leads</option>
+
+                            <!-- <select id="select2Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
+                                <option value="HI">Select</option>
+
+                                <a href="{{url('/all_tasks')}}">
+                                    <option value="AK"> All Leads</option>
+                                </a>
                                 <option value="HI">Converted Leads</option>
                                 <option value="CA">Junk Leads</option>
                                 <option value="NV">Mailing Labels</option>
@@ -288,14 +293,30 @@
                                 <option value="NE">Today's Leads</option>
                                 <option value="NM">Unread leads</option>
                                 <option value="ND">Unsubscribed Leads</option>
-                            </select>
+                            </select> -->
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white"></a>All Task</button>
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{url('/all_tasks')}}">All Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/all_locked_tasks')}}">All Locked Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/closed_tasks')}}">Closed Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/open_tasks')}}">Open Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/overdue_tasks')}}">Overdue Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/today_tasks')}}">Today Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/today_overdue_tasks')}}">Today + Overdue Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/tomorrow_tasks')}}">Tomorrow Tasks</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
                     <div class="header p-3 d-flex slign-items-center justify-content-end ">
                         <div class="start">
                             <div class="btn-group">
-                                <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white">Create Lead</a></button>
+                                <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white">Create Task</a></button>
                                 <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="visually-hidden">Toggle Dropdown</span>
                                 </button>
@@ -320,7 +341,7 @@
                             </div> --}}
 
                         </div>
-                        <div class="middle ms-3">
+                        <!-- <div class="middle ms-3">
                             <div class="btn-group">
                                 <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
                                 <ul class="dropdown-menu">
@@ -336,7 +357,7 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>

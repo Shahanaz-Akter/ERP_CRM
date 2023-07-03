@@ -15,6 +15,8 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://1.envato.market/frest_admin">
     
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/custom.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/favicon/favicon.ico') }}" />
 
@@ -105,7 +107,6 @@
 
 {{-- css link for  datatable selector --}}
 <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
-
 
 
 <style>
@@ -259,226 +260,43 @@
 
     @include('components.navbar')
     <!-- Layout wrapper -->
-    <div class="d-flex">
-        @include('Task.task_filter_sidebar')
-        <!-- create candidate model -->
 
-        <!-- Layout container -->
-        <div class="" style="height:100vh; width:100%;overflow:scroll;">
+    <div class="container" style="border: 2px solid transparent;">
 
+        <div class="d-flex justify-content-center align-items-center">
 
-            <div class="p-3" style="">
+            <div class="w-50" style="border: 1px solid black;">
+                <div class="text-left pt-1 pb-2 mt-2"> <i class="fas fa-file ms-2 me-2 text-primary" style="font-size: 20px;"></i> From File</div>
+                <br>
+                <div class="text-center pb-1">
+                    <div class="pt-2 pb-2">Drag and drop your file here.</div>
+                    <br>
+                    -- or --
+                    <br>
+                    <a href="{{url('/browse')}}">
+                        <div class="pt-4 pb-3"><button class="btn btn-primary"> Browse <i class="fas fa-plus "></i></button></div>
+                    </a>
+                    <div class="pt-4 pb-3">
+                        Download sample file CSV or XLSX</div>
 
-                <!-- Content -->
-                <div class="header d-flex align-items-center justify-content-between">
-
-                    <div class="" style="font-size: 22px;">
-                        Edit Task
-                        <a href="" class="ms-5"> Edit Page Layout</a>
-                    </div>
-
-                    <div class="header p-3 d-flex align-items-center justify-content-end fs-2">
-                        <!-- <button class="start btn btn-primary">
-                            <a href="{{url('/task')}}" class="text-white">Cancel</a>
-                        </button>
-                        <button class="start ms-3 btn btn-primary" type="submit">
-                            Save and New
-                        </button>
-                        <button class="middle ms-3 btn btn-primary" type="submit">
-                            Save
-                        </button> -->
+                    <div class="pt-4 pb-3">You can import up to 5000 records through an .xls, .xlsx, .vcf or .csv file.
+                        <br>
+                        To import more than 5000 records at a time, use a .csv file.
                     </div>
                 </div>
             </div>
-            <!-- / Layout page -->
-
-
-            <h4 class="header p-3">Task Information</h4>
-            <div class="row header p-3">
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Task Owner</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    <input type="text" class="form-control" placeholder="" value="batman020120130114">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Subject</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    <input type="text" class="form-control" placeholder="" value="Complete CRM Getting Started steps">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Due Date</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="03/28/2023">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Contact</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="John Butt (Sample)">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Deal</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="Benton">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Status</label>
-                </div>
-
-
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3">
-                    <select id="alignment-country" class="select2 form-select" data-allow-clear="true">
-                        <option value="">Select</option>
-                        <option value="Australia">Complete</option>
-                        <option value="Bangladesh">Incomplete</option>
-                    </select>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Priority</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="highest">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Reminder</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" value="..........">
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label"> Description
-                    </label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    Get approval for price quote
-                </div>
-
-            </div>
-
-
-
-            <div class="header d-flex align-items-center justify-content-center">
-
-
-
-                <div class="header p-3 d-flex align-items-center justify-content-end fs-2">
-                    <button class="start btn btn-primary">
-                        <a href="{{url('/task')}}" class="text-white">Cancel</a>
-                    </button>
-                    <button class="start ms-3 btn btn-primary" type="submit">
-                        Save and New
-                    </button>
-                    <button class="middle ms-3 btn btn-primary" type="submit">
-                        Save
-                    </button>
-                </div>
-            </div>
-
-
         </div>
-
     </div>
     <!-- / Layout wrapper -->
-
-
-
 
 
     <!-- End Example Code -->
 
     <!-- for data tables -->
 
-    {{-- <script src="https://code.jquery.com/jquery-3.5.1.js"></script> --}}
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.5.0/js/dataTables.select.min.js"></script>
-    {{-- for export btns --}}
-    <script src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
 
-
-
-    <script>
-        $(document).ready(function() {
-            // Setup - add a text input to each footer cell
-            $('#AddCamTbl thead tr')
-                .clone(true)
-                .addClass('filters')
-                .appendTo('#AddCamTbl thead');
-
-            var table = $('#AddCamTbl').DataTable({
-                orderCellsTop: true,
-                fixedHeader: true,
-                initComplete: function() {
-                    var api = this.api();
-
-                    // For each column
-                    api
-                        .columns()
-                        .eq(0)
-                        .each(function(colIdx) {
-                            // Set the header cell to contain the input element
-                            var cell = $('.filters th').eq(
-                                $(api.column(colIdx).header()).index()
-                            );
-
-                            var title = $(cell).text();
-                            $(cell).html('<input type="text" class="option_' + (colIdx - 1) + '_th_i" placeholder="' + title + '" />');
-
-                            // On every keypress in this input
-                            $(
-                                    'input',
-                                    $('.filters th').eq($(api.column(colIdx).header()).index())
-                                )
-                                .off('keyup change')
-                                .on('change', function(e) {
-                                    // Get the search value
-                                    $(this).attr('title', $(this).val());
-                                    var regexr = '({search})'; //$(this).parents('th').find('select').val();
-
-                                    var cursorPosition = this.selectionStart;
-                                    // Search the column for that value
-                                    api
-                                        .column(colIdx)
-                                        .search(
-                                            this.value != '' ?
-                                            regexr.replace('{search}', '(((' + this.value + ')))') :
-                                            '',
-                                            this.value != '',
-                                            this.value == ''
-                                        )
-                                        .draw();
-                                })
-                                .on('keyup', function(e) {
-                                    e.stopPropagation();
-
-                                    $(this).trigger('change');
-                                    $(this)
-                                        .focus()[0]
-                                        .setSelectionRange(cursorPosition, cursorPosition);
-                                });
-                        });
-                },
-            });
-        });
-    </script>
-    <!-- for custom data tables  -->
-
-    <script>
-        const open_radio_subcontent = (tag) => {
-
-            tag.parentElement.parentElement.children[1].classList.remove('d-none');
-            let others = document.querySelectorAll('.with_sub_content');
-
-            Array.from(others).forEach(element => {
-
-                if (element != tag) {
-                    // console.log(element);
-                    element.parentElement.parentElement.children[1].classList.add('d-none');
-                }
-            });
-        }
-    </script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -502,13 +320,16 @@
     <!-- Vendors JS -->
 
     <script src="{{ asset('/assets/vendor/libs/moment/moment.js') }}"></script>
-    <script src="{{ asset('/assets/vendor/libs/flatpickr/flatpickr.js') }}"></script> //for date picker
-    <script src="{{ asset('/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script> //for date
-    picker
+    <script src="{{ asset('/assets/vendor/libs/flatpickr/flatpickr.js') }}"></script>
+    <!-- for date picker -->
+    <script src="{{ asset('/assets/vendor/libs/bootstrap-datepicker/bootstrap-datepicker.js') }}"></script>
+    <!-- for date picker -->
     <script src="{{ asset('/assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js') }}"></script>
-    //for date picker
-    <script src="{{ asset('/assets/vendor/libs/jquery-timepicker/jquery-timepicker.js') }}"></script> //for date picker
-    <script src="{{ asset('/assets/vendor/libs/pickr/pickr.js') }}"></script> //for date picker
+    <!-- for date picker -->
+    <script src="{{ asset('/assets/vendor/libs/jquery-timepicker/jquery-timepicker.js') }}"></script>
+    <!-- for date picker -->
+    <script src="{{ asset('/assets/vendor/libs/pickr/pickr.js') }}"></script>
+    <!-- for date picker -->
     <script src="../../assets/vendor/js/dropdown-hover.js"></script>
 
 
@@ -554,17 +375,7 @@
     <script type="text/javascript" src="https://gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
 
 
-    {{-- scriopt for download data from datatable --}}
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.13.3/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.5/js/buttons.html5.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-    {{-- for dataTable selector  --}}
     <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
 
 

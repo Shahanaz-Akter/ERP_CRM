@@ -7,7 +7,7 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
-    <title>Edit| Tasks</title>
+    <title>Tomorrow| Tasks</title>
     
     
     <meta name="description" content="Start your development with a Dashboard for Bootstrap 5" />
@@ -15,6 +15,8 @@
     <!-- Canonical SEO -->
     <link rel="canonical" href="https://1.envato.market/frest_admin">
     
+    <link rel="stylesheet" href="../../assets/vendor/css/rtl/custom.css">
+
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/favicon/favicon.ico') }}" />
 
@@ -105,7 +107,6 @@
 
 {{-- css link for  datatable selector --}}
 <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
-
 
 
 <style>
@@ -259,8 +260,8 @@
 
     @include('components.navbar')
     <!-- Layout wrapper -->
-    <div class="d-flex">
-        @include('Task.task_filter_sidebar')
+    <div class=" d-flex">
+        @include('Task.task_sidebar')
         <!-- create candidate model -->
 
         <!-- Layout container -->
@@ -270,112 +271,90 @@
             <div class="p-3" style="">
 
                 <!-- Content -->
-                <div class="header d-flex align-items-center justify-content-between">
-
-                    <div class="" style="font-size: 22px;">
-                        Edit Task
-                        <a href="" class="ms-5"> Edit Page Layout</a>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="header w-50">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white">All Task</a></button>
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{url('/all_tasks')}}">All Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/all_locked_tasks')}}">All Locked Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/closed_tasks')}}">Closed Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/open_tasks')}}">Open Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/overdue_tasks')}}">Overdue Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/today_tasks')}}">Today Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/today_overdue_tasks')}}">Today + Overdue Tasks</a></li>
+                                    <li><a class="dropdown-item" href="{{url('/tomorrow_tasks')}}">Tomorrow Tasks</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="header p-3 d-flex align-items-center justify-content-end fs-2">
-                        <!-- <button class="start btn btn-primary">
-                            <a href="{{url('/task')}}" class="text-white">Cancel</a>
-                        </button>
-                        <button class="start ms-3 btn btn-primary" type="submit">
-                            Save and New
-                        </button>
-                        <button class="middle ms-3 btn btn-primary" type="submit">
-                            Save
-                        </button> -->
+                    <div class="header p-3 d-flex slign-items-center justify-content-end ">
+                        <div class="start">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white">Create Task</a></button>
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="{{url('/import_tasks')}}">Import Tasks</a></li>
+                                    <!-- <li><a class="dropdown-item" href="javascript:void(0);">Import Notes</a></li> -->
+
+                                </ul>
+                            </div>
+
+                            {{-- <div class="btn-group">
+                                <button type="button" class="btn btn-primary">Export</button>
+                                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="javascript:void(0);" id="excel"></a></li>
+                                    <li><a class="dropdown-item" href="javascript:void(0);" id="csv"></a></li>
+
+                                </ul>
+                            </div> --}}
+
+                        </div>
+                        <!-- <div class="middle ms-3">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-outline-success dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Actions</button>
+                                <ul class="dropdown-menu">
+                                    {{-- href="javascript:void(0);" --}}
+                                    <li><a class="dropdown-item" href="{{url('/task/mass_delete')}}">Mass Delete</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{url('/task/mass_update')}}">Mass Update</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{url('/task/manage_tag')}}">Manage Tag</a>
+                                    </li>
+                                    </hr>
+                                    <li><a class="dropdown-item" href="{{url('/task/print_view')}}">Print View</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> -->
+
                     </div>
                 </div>
+
+                {{-- table start --}}
+
+                @include('Task.All_task.All_tomorrow_table.tomorrow_list_table')
+
+
+                {{-- <div class="content-backdrop fade"></div> --}}
+
             </div>
             <!-- / Layout page -->
-
-
-            <h4 class="header p-3">Task Information</h4>
-            <div class="row header p-3">
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Task Owner</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    <input type="text" class="form-control" placeholder="" value="batman020120130114">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Subject</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    <input type="text" class="form-control" placeholder="" value="Complete CRM Getting Started steps">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Due Date</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="03/28/2023">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Contact</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="John Butt (Sample)">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Deal</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="Benton">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Status</label>
-                </div>
-
-
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3">
-                    <select id="alignment-country" class="select2 form-select" data-allow-clear="true">
-                        <option value="">Select</option>
-                        <option value="Australia">Complete</option>
-                        <option value="Bangladesh">Incomplete</option>
-                    </select>
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Priority</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" placeholder="" value="highest">
-                </div>
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label">Reminder</label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 "> <input type="text" class="form-control" value="..........">
-                </div>
-
-                <div class="col-6 col-md-4 col-lg-4 col-xxl-4 mb-3 ms-5 text-end">
-                    <label for="" class="form-label"> Description
-                    </label>
-                </div>
-                <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    Get approval for price quote
-                </div>
-
-            </div>
-
-
-
-            <div class="header d-flex align-items-center justify-content-center">
-
-
-
-                <div class="header p-3 d-flex align-items-center justify-content-end fs-2">
-                    <button class="start btn btn-primary">
-                        <a href="{{url('/task')}}" class="text-white">Cancel</a>
-                    </button>
-                    <button class="start ms-3 btn btn-primary" type="submit">
-                        Save and New
-                    </button>
-                    <button class="middle ms-3 btn btn-primary" type="submit">
-                        Save
-                    </button>
-                </div>
-            </div>
-
-
+            <!-- Overlay -->
+            <div class="layout-overlay layout-menu-toggle"></div>
+            <!-- Drag Target Area To SlideIn Menu On Small Screens -->
+            <div class="drag-target"></div>
         </div>
 
     </div>

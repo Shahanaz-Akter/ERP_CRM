@@ -193,3 +193,36 @@ Route::get('/task', function () {
 Route::get('/edit_table_data', function () {
     return view('Task.edit_table_data');
 });
+
+
+Route::get('/all_tasks', function () {
+    return view('Task.All_task.all_tasks');
+});
+
+Route::get('/all_locked_tasks', function () {
+    return view('Task.All_task.all_locked_tasks');
+});
+Route::get('/closed_tasks', function () {
+    return view('Task.All_task.closed_tasks');
+});
+Route::get('/open_tasks', function () {
+    return view('Task.All_task.open_tasks');
+});
+Route::get('/overdue_tasks', function () {
+    return view('Task.All_task.overdue_tasks');
+});
+
+Route::get('/today_tasks', function () {
+    return view('Task.All_task.today_tasks');
+});
+
+Route::get('/today_overdue_tasks', function () {
+    return view('Task.All_task.today_overdue_tasks');
+});
+Route::get('/tomorrow_tasks', function () {
+    return view('Task.All_task.tomorrow_tasks');
+});
+
+Route::get('/import_tasks', function () {
+    return view('Task.import_task');
+});
