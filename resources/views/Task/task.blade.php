@@ -275,25 +275,6 @@
                     <div class="header w-50">
                         <div class="col-md-6">
 
-                            <!-- <select id="select2Basic" class="select2 form-select form-select-lg" data-allow-clear="true">
-                                <option value="HI">Select</option>
-
-                                <a href="{{url('/all_tasks')}}">
-                                    <option value="AK"> All Leads</option>
-                                </a>
-                                <option value="HI">Converted Leads</option>
-                                <option value="CA">Junk Leads</option>
-                                <option value="NV">Mailing Labels</option>
-                                <option value="OR">My Converted Leads</option>
-                                <option value="WA">My Leads</option>
-                                <option value="AZ">Not Qualified Leads</option>
-                                <option value="CO">Open Leads</option>
-                                <option value="ID">Recently created leads</option>
-                                <option value="MT">Recently Modified Leads</option>
-                                <option value="NE">Today's Leads</option>
-                                <option value="NM">Unread leads</option>
-                                <option value="ND">Unsubscribed Leads</option>
-                            </select> -->
                             <div class="btn-group">
                                 <button type="button" class="btn btn-success"><a href="/create_leads" class="text-white"></a>All Task</button>
                                 <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">

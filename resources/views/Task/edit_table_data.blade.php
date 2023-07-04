@@ -260,7 +260,7 @@
     @include('components.navbar')
     <!-- Layout wrapper -->
     <div class="d-flex">
-        @include('Task.task_filter_sidebar')
+        @include('Task.task_sidebar')
         <!-- create candidate model -->
 
         <!-- Layout container -->
@@ -351,7 +351,7 @@
                     </label>
                 </div>
                 <div class="col-6 col-md-5 col-lg-5 col-xxl-5 mb-3 ">
-                    Get approval for price quote
+                    <textarea name="" id="" cols="70" rows="">Get approval for price quote</textarea>
                 </div>
 
             </div>

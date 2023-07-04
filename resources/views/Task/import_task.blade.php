@@ -261,7 +261,7 @@
     @include('components.navbar')
     <!-- Layout wrapper -->
 
-    <div class="container" style="border: 2px solid transparent;">
+    <div class="container mt-5" style="border: 2px solid transparent;">
 
         <div class="d-flex justify-content-center align-items-center">
 
@@ -277,7 +277,7 @@
                         <div class="pt-4 pb-3"><button class="btn btn-primary"> Browse <i class="fas fa-plus "></i></button></div>
                     </a>
                     <div class="pt-4 pb-3">
-                        Download sample file CSV or XLSX</div>
+                        Download sample file <b class="text-primary">CSV</b> or <b class="text-primary">XLSX</b></div>
 
                     <div class="pt-4 pb-3">You can import up to 5000 records through an .xls, .xlsx, .vcf or .csv file.
                         <br>
@@ -286,6 +286,10 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+        <a href="{{url('/task')}}"><button type="button" class="btn btn-label-primary">Cancel</button></a>
+        <a href="{{url('/drag/next')}}"><button type="button" class="btn btn-primary ms-2">Next</button></a>
     </div>
     <!-- / Layout wrapper -->
 

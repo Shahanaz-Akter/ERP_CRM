@@ -7,3 +7,12 @@
 
     visibility: visible;
 }
+
+.text_custom {
+    font-weight: 500;
+    color: black;
+}
+
+.text_custom:hover {
+    color: blue;
+}

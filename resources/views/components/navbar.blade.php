@@ -64,24 +64,24 @@
                         <a class="nav-link   text-white" href="{{url('/meeting')}}">Meetings</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link   text-white" href="/cells">Cells</a>
+                        <a class="nav-link   text-white" href="{{url('/cells')}}">Cells</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link   text-white" href="/reports">Reports</a>
+                        <a class="nav-link   text-white" href="{{url('/reports')}}">Reports</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link   text-white" href="{{url('/analytics')}}">Analytics</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link   text-white" href="/products">Products</a>
+                        <a class="nav-link   text-white" href="{{url('/products')}}">Products</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="/services">Services</a>
+                        <a class="nav-link text-white" href="{{url('/services')}}">Services</a>
                     </li>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="/projects">Projects</a>
+                        <a class="nav-link text-white" href="{{url('/projects')}}">Projects</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -226,3 +226,28 @@ Route::get('/tomorrow_tasks', function () {
 Route::get('/import_tasks', function () {
     return view('Task.import_task');
 });
+
+Route::get('/analytics', function () {
+    return view('Analytics.analytics');
+});
+Route::get('/sales_trend', function () {
+    return view('Analytics.All_analytics.sales_trend');
+});
+Route::get('/org_over_view', function () {
+    return view('Analytics.All_analytics.org_over_view');
+});
+Route::get('/lead_analytics', function () {
+    return view('Analytics.All_analytics.lead_analytics');
+});
+Route::get('/deal_insights', function () {
+    return view('Analytics.All_analytics.deal_insights');
+});
+Route::get('/marketing_metrics', function () {
+    return view('Analytics.All_analytics.marketing_metrics');
+});
+Route::get('/sales_followup_trend', function () {
+    return view('Analytics.All_analytics.sales_followup_trend');
+});
+Route::get('/activity_status', function () {
+    return view('Analytics.All_analytics.activity_status');
+});
