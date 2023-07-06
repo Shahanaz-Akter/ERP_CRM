@@ -224,7 +224,7 @@
 
 <body>
 
-    @include('components.navbar')
+    @include('components.navbar ')
     <!-- Layout wrapper start-->
     <div class="d-flex">
         @include('Analytics.analytics_sidebar')
@@ -233,7 +233,7 @@
             <div class="p-3" style="">
                 <div class="header w-50 mt-2 mb-4" style="font-size: 20px;">
                     <div class="col-md-6" style="font-weight: 500;">
-                        Sales Trend
+                        Marketing Metrics
                     </div>
                 </div>
                 <!-- org overview part start -->

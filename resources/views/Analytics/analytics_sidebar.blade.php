@@ -1,3 +1,4 @@
+<!-- Analytics Sidebar -->
 <div style="width:380px;" class="filter_sidebar">
 
     <div class="ms-3 mb-3 mt-4">

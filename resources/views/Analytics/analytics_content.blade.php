@@ -1,3 +1,4 @@
+<!-- Analysis default Content -->
 <div class="row">
     <!-- Website Analytics-->
     <div class="col-lg-6 col-md-12 mb-4">

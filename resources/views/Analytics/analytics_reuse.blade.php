@@ -29,7 +29,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/boxicons.css') }}" />
     <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/fontawesome.css') }}" />
-    <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/flag-icons.css') }}" />
+    <!-- <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/flag-icons.css') }}" /> -->
 
     <!-- Core CSS -->
     <link rel="stylesheet" href="{{ asset('/assets/vendor/css/rtl/core.css') }}" class="template-customizer-core-css" />
@@ -227,9 +227,9 @@
     <!-- Layout wrapper start-->
     <div class=" d-flex">
         @include('Analytics.analytics_sidebar')
-
+        <!-- analytics default analysis part start -->
         @yield('content')
-
+        <!-- analytics default analysis part end -->
 
     </div>
     <!-- / Layout wrapper end-->
